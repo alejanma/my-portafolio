@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { Button, Grid } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#2979ff'
+    }
+  }
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Grid container spacing={2} justifyContent="space-evenly" alignItems="center">
+        <Grid item xs={6}>
+          <Button variant="contained" color="primary" sx={{ ml: "50%", mr:'auto'}}>
+            Marian
+          </Button>
+        </Grid>
+        <Grid item xs={6}>
+          <Button variant="contained" color="primary" sx={{ ml: "50%", mr:'auto'}}>
+            Joel
+          </Button>
+        </Grid>
+      </Grid>
+    </ThemeProvider>
   );
 }
 
